@@ -6,6 +6,7 @@ public class MenorYmayorFor {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		//vamosss yaa
 		Scanner in = new Scanner(System.in);
 		int X = in.nextInt();
 		int num1;
@@ -25,6 +26,7 @@ public class MenorYmayorFor {
 		}
 			System.out.println(auxMenor + " Es el menor");
 			System.out.println(auxMayor + " Es el mayor");
+			System.out.println("por que coño no sale ");
 		
 	}
 }
