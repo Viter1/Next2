@@ -17,8 +17,8 @@ public class MenorYmayorFor {
 			num1 = in.nextInt();
 			if (num1 > aux2) {
 				auxMayor = num1;
-			} else if (auxMayor <= num1 || auxMayor==num1)
-				auxMenor = num1;
+			} else if (auxMayor <= aux2)
+				auxMenor = aux2;
 			{
 
 				aux2 = num1;
