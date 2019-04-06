@@ -1,5 +1,6 @@
 package PILDORAS;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
@@ -63,16 +64,17 @@ public class POO_Uso_Empleado {
 		// MisEmpleados[i].getSueldo() +" FECHA ALTA: "
 		// + MisEmpleados[i].getAltaContrato());
 		// }
+		Arrays.sort(MisEmpleados);
 
 		for (Empleado empleado : MisEmpleados) {
-			System.out.println(empleado.getNombre() + " sueldo: " + empleado.getSueldo() + " fecha de alta: "
-					+ empleado.getAltaContrato());
+			System.out.println("Nombre: " + empleado.getNombre() + " sueldo: " + empleado.getSueldo()
+					+ " fecha de alta: " + empleado.getAltaContrato());
 		}
 
 	}
 }
 
-class Empleado {
+class Empleado implements Comparable {
 	private String nombre;
 	private double sueldo;
 	private Date altaContrato;
@@ -124,6 +126,20 @@ class Empleado {
 		this.altaContrato = altaContrato;
 	}
 
+	@Override
+	public int compareTo(Object miObjeto) {
+		Empleado otroEmpleado = (Empleado) miObjeto;
+		if (this.sueldo < otroEmpleado.sueldo) {
+			return -1;
+		}
+
+		if (this.sueldo > otroEmpleado.sueldo) {
+			return 1;
+		}
+
+		return 0;
+	}
+
 }
 
 class Jefatura extends Empleado {
@@ -137,7 +153,7 @@ class Jefatura extends Empleado {
 	public void establece_Incentovo(double b) {
 		this.incentivo = b;
 	}
- 
+
 	public double getSueldo() {
 		double sueldoJefe = super.getSueldo();
 		return incentivo + sueldoJefe;
