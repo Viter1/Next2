@@ -50,10 +50,26 @@ public class POO_Uso_Empleado {
 
 		jefa_finanzas.establece_Incentovo(5050);
 
+		// Principio de sustitucion
+		// Empleado director_comercial = new Jefatura("Sandra", 8500, 2012, 05, 05);
+		//
+		// Comparable ejemplo = new Empleado("Ele", 9500, 2011, 06, 07);
+		//
+		// if (director_comercial instanceof Empleado) {
+		// System.out.println("Es de tipo jefatura");
+		//
+		// }
+		//
+		// if (ejemplo instanceof Comparable) {
+		// System.out.println("Implementa la interfaz comparable");
+		// }
+
 		// for (int i = 0; i < MisEmpleados.length; i++) {
 		// MisEmpleados[i].setSueldo(5);
 		// }
 
+		System.out.println(jefa_finanzas.tomarDecisiones("Dar más días de vacaciones a los empleados"));
+		
 		for (Empleado empleado : MisEmpleados) {
 			empleado.setSueldo(5);
 
@@ -132,17 +148,14 @@ class Empleado implements Comparable {
 		if (this.sueldo < otroEmpleado.sueldo) {
 			return -1;
 		}
-
 		if (this.sueldo > otroEmpleado.sueldo) {
 			return 1;
 		}
-
 		return 0;
 	}
-
 }
 
-class Jefatura extends Empleado {
+class Jefatura extends Empleado implements Jefes {
 	private double incentivo;
 
 	public Jefatura(String nom, double sue, int anio, int mes, int dia) {
@@ -157,6 +170,11 @@ class Jefatura extends Empleado {
 	public double getSueldo() {
 		double sueldoJefe = super.getSueldo();
 		return incentivo + sueldoJefe;
+	}
+
+	@Override
+	public String tomarDecisiones(String desicion) {
+		return "Un miembro de la direccion ha tomado la desicion de: " + desicion;
 	}
 
 }
