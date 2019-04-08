@@ -69,7 +69,11 @@ public class POO_Uso_Empleado {
 		// }
 
 		System.out.println(jefa_finanzas.tomarDecisiones("Dar más días de vacaciones a los empleados"));
-		
+		System.out.println(
+				"El jefe " + jefa_finanzas.getNombre() + " tiene bonus de " + jefa_finanzas.estableceBonus(500));
+
+		System.out.println("El empleado " + MisEmpleados[3].getNombre() + " tiene un bonus de: " + MisEmpleados[3].estableceBonus(200));
+
 		for (Empleado empleado : MisEmpleados) {
 			empleado.setSueldo(5);
 
@@ -80,6 +84,7 @@ public class POO_Uso_Empleado {
 		// MisEmpleados[i].getSueldo() +" FECHA ALTA: "
 		// + MisEmpleados[i].getAltaContrato());
 		// }
+
 		Arrays.sort(MisEmpleados);
 
 		for (Empleado empleado : MisEmpleados) {
@@ -90,7 +95,7 @@ public class POO_Uso_Empleado {
 	}
 }
 
-class Empleado implements Comparable {
+class Empleado implements Comparable, Trabajadores {
 	private String nombre;
 	private double sueldo;
 	private Date altaContrato;
@@ -153,6 +158,11 @@ class Empleado implements Comparable {
 		}
 		return 0;
 	}
+
+	@Override
+	public double estableceBonus(double gratificacion) {
+		return Trabajadores.bonusBase + gratificacion;
+	}
 }
 
 class Jefatura extends Empleado implements Jefes {
@@ -175,6 +185,12 @@ class Jefatura extends Empleado implements Jefes {
 	@Override
 	public String tomarDecisiones(String desicion) {
 		return "Un miembro de la direccion ha tomado la desicion de: " + desicion;
+	}
+
+	@Override
+	public double estableceBonus(double gratificacion) {
+		double prima = 2000;
+		return Trabajadores.bonusBase + gratificacion + prima;
 	}
 
 }
