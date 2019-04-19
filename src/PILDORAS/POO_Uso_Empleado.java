@@ -49,6 +49,8 @@ public class POO_Uso_Empleado {
 		Jefatura jefa_finanzas = (Jefatura) MisEmpleados[5];
 
 		jefa_finanzas.establece_Incentovo(5050);
+		
+		
 
 		// Principio de sustitucion
 		// Empleado director_comercial = new Jefatura("Sandra", 8500, 2012, 05, 05);
@@ -95,7 +97,7 @@ public class POO_Uso_Empleado {
 	}
 }
 
-class Empleado implements Comparable, Trabajadores {
+class Empleado implements Comparable , Trabajadores {
 	private String nombre;
 	private double sueldo;
 	private Date altaContrato;
