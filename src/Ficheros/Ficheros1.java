@@ -15,7 +15,7 @@ public class Ficheros1 {
 }
 
 class leerFichero {
-
+// Metodo para leer caracteres
 	public void lee() {
 		try {
 			FileReader lector = new FileReader("./test.txt");
@@ -23,7 +23,7 @@ class leerFichero {
 			while (longitudLector != -1) {
 				longitudLector = lector.read();
 				char letra = (char) longitudLector;
-				System.out.println(letra);
+				System.out.print(letra);
 			}
 			lector.close();
 
