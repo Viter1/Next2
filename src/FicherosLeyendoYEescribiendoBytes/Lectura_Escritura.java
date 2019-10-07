@@ -10,7 +10,7 @@ public class Lectura_Escritura {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int counter = 0;
-
+		// Numero de bytes de la foto
 		int datosEntrada[] = new int[181135];
 
 		try {
