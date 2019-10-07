@@ -19,6 +19,7 @@ public class Ficheros_Directorio3 {
 
 		Escribiendo accede_es = new Escribiendo();
 		accede_es.escribir(archivo_destino);
+		
 		// Borrar nuestro archivo
 		// crearDirect.delete();
 
